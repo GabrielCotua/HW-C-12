@@ -1,3 +1,5 @@
+//HW 12 Gabriel Cotua
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,6 +12,8 @@
 int CharIsAt( char pStr[], const char ch, int loc[], int mLoc);
 
 int main(void) {
+	printf("\n\n|#####################|\n|HW #12, Gabriel Cotua|\n|#####################|\n\n");
+
 
 	char userInput[SIZE], lookUp;
 	char *piUserInput = userInput, *piUserInputEnd = userInput + SIZE; // char pointers
