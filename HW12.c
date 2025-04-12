@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define SIZE 41 // size of the input character array
 #define MAXMATCHES 10 // max matches
@@ -21,7 +22,10 @@ int main(void) {
 	
 
 	while ( printf("Enter a line of text:\n"), fgets(userInput, SIZE, stdin) && userInput[0] != '\n') {
-		printf("Your Input: %s", userInput);
+		// cleaning \n character
+
+		userInput[strlen(userInput)-1] = '\0';
+		printf("Your Input: %s\n", userInput);
 		printf("Input a character to look for: ");
 		lookUp = getchar();
 		FLUSH;
@@ -39,20 +43,28 @@ int main(void) {
 
 		printf("The character \'%c\' was found %d\n", lookUp, counter);
 		printf("The first 4 matches are at:");
-		for ( piMatches = matches; piMatches < piMatchesEnd; piMatches++)
+
+		// goes through the whole array looking for the matching values
+		for ( piMatches = matches; piMatches < piMatchesEnd; piMatches++) 
 		{
 			if(*piMatches != -1)
 				printf(" %d", *piMatches);
 		}
 		printf(" in the string\n");
-		printf("\"%s\"", userInput);
-		for (piUserInput; piUserInput < piUserInputEnd; piUserInput++)
+		printf("\"%s\"\n ", userInput);
+
+		// using user input length, we are going to get all the locations of occurrences
+		for (piUserInput = userInput, piMatches = matches; piUserInput < piUserInputEnd; piUserInput++) 
 		{
-			if(*piUserInput != -1)
-				printf(" %d", *piUserInput);
-			else
-				putchar(" ");
+			if(*piMatches != -1 && *piMatches == piUserInput - userInput) {
+				putchar('^');
+				piMatches++;
+			}
+			else {
+				putchar(' ');
+			}
 		}
+		putchar('\n');
 	}
 
     return 0;
