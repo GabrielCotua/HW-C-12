@@ -23,7 +23,7 @@ int main(void) {
 	while ( printf("Enter a line of text:\n"), fgets(userInput, SIZE, stdin) && userInput[0] != '\n') {
 
 		// cleaning \n character
-		if (myStrCh('\n', userInput) == 1) {
+		if (myStrCh('\n', userInput) == 0) {
 		    FLUSH;
 		}
 
