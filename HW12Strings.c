@@ -151,8 +151,6 @@ int stringIsAt(char *pStr, char *lookup, int *loc, int mLoc)
 				piLookup = lookup;
 				chain = 0;
 
-				// skip ahead to avoid overlapping matches
-				piStr += lenLookup - 1;
 			}
 		}
 		else
@@ -193,36 +191,36 @@ int myStrCh(const char goal, char pStr[])
 	return 0;
 }
 /*
+
+
 |#####################|
 |HW #12, Gabriel Cotua|
 |#####################|
 
 Enter a line of text to search in (ctr+c or ENTER to exit):
-holajaslkdfjalskdfholahoasldfkjalskdfj
-Your Input: holajaslkdfjalskdfholahoasldfkjalskdfj
-Input a string to look for: hola
-The string 'hola
-' was found 2 time(s).
-The first 2 matches is/are at: [0] [18] in the string
-"holajaslkdfjalskdfholahoasldfkjalskdfj"
- ^                 ^
+alskdjfasdfasfasasafsdfjajsfajsdfjasasasfjasdjfajsasaas
+Your Input: alskdjfasdfasfasasafsdfjajsfajsdfjasasas
+Input a string to look for: as
+The string 'as' was found 7 time(s).
+The first 7 matches is/are at: [7] [11] [14] [16] [34] [36] [38] in the string
+"alskdjfasdfasfasasafsdfjajsfajsdfjasasas"
+        ^   ^  ^ ^                 ^ ^ ^
 Enter a line of text to search in (ctr+c or ENTER to exit):
-laksjd;falksjdf;lakjsdflkajsldfkjalksdjflkajsdflaksdjflakjflasjdflakjsdflajsdf
-Your Input: laksjd;falksjdf;lakjsdflkajsldfkjalksdj
-Input a string to look for: alksdjflaksdjflakjsdlfkjalsdkfj
-The string 'alksdjflaksdjflakjsdlfkjalsdkfj
-' was found 0 time(s).
-No matches.
-
+alksdjflkasjdfkljjhohohohoasjldfkjaslkdfjhojalsdkfjaho
+Your Input: alksdjflkasjdfkljjhohohohoasjldfkjaslkdf
+Input a string to look for: ho
+The string 'ho' was found 4 time(s).
+The first 4 matches is/are at: [18] [20] [22] [24] in the string
+"alksdjflkasjdfkljjhohohohoasjldfkjaslkdf"
+                   ^ ^ ^ ^
 Enter a line of text to search in (ctr+c or ENTER to exit):
-hola, muy buenos dias amigo mio. Como se encuentra el dia de hoy?
-Your Input: hola, muy buenos dias amigo mio. Como s
-Input a string to look for: a
-The string 'a
-' was found 3 time(s).
-The first 3 matches is/are at: [3] [19] [22] in the string
-"hola, muy buenos dias amigo mio. Como s"
-	^               ^  ^
+asdfhasd jalskd laksjdk jaslkdfj laksgasj dkfjasldkfj
+Your Input: asdfhasd jalskd laksjdk jaslkdfj laksgas
+Input a string to look for:  
+The string ' ' was found 4 time(s).
+The first 4 matches is/are at: [8] [15] [23] [32] in the string
+"asdfhasd jalskd laksjdk jaslkdfj laksgas"
+         ^      ^       ^        ^
 Enter a line of text to search in (ctr+c or ENTER to exit):
 
 Bye byee.
